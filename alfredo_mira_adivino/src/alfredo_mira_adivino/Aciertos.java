@@ -1,5 +1,6 @@
 package alfredo_mira_adivino;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Aciertos {
@@ -7,11 +8,14 @@ public class Aciertos {
 	public static void main(String[] args) {
 		
 		int n = 0,cont = 0;
-        int x = (int) (500 *Math.random());
+		Random r = new Random();
+		int abajo= 10;
+		int arriba= 50;
+        int x = r.nextInt(arriba-abajo) + abajo;
         //System.out.print(x);
         Scanner sc = new Scanner(System.in);
         do {
-            System.out.print("\nIntroduce el valor de X: ");
+            System.out.println("\nIntroduce un valor entre " + abajo + " y " + arriba );
             n = sc.nextInt();
             if (n > x) {
                 System.out.print("Te pasaste Amigo");
